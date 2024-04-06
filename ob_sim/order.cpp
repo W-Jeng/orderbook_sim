@@ -1,7 +1,7 @@
 #include<string>
 #include "order.h"
 
-std::string order_status_to_str(const OrderStatus order_status) {
+const std::string order_status_to_str(const OrderStatus& order_status) {
 	std::string status_str;
 	switch (order_status) {
 	case OrderStatus::ACTIVE:

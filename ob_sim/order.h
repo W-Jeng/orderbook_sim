@@ -15,6 +15,6 @@ struct BasicOrder {
 	long quantity;
 };
 
-std::string order_status_to_str(const OrderStatus order_status);
+const std::string order_status_to_str(const OrderStatus& order_status);
 
 #endif
