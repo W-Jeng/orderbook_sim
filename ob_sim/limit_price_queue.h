@@ -13,12 +13,12 @@ public:
 	void add_order(const BasicOrder& basic_order);
 	void cancel_order(const std::string& order_id);
 	void print_status();
-	signed long int get_priority_order_qty();
+	BasicOrder* get_priority_order();
 
 private:
 	int total_num_orders = 0;
 	std::queue<BasicOrder> order_queue;
-	std::unordered_map<std::string, OrderStatus> order_status_map;
+	std::unordered_map<std::string, BasicOrder> order_status_map;
 };
 
 #endif
