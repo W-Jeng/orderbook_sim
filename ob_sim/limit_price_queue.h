@@ -13,6 +13,7 @@ public:
 	void add_order(const BasicOrder& basic_order);
 	void cancel_order(const std::string& order_id);
 	void print_status();
+	signed long int get_priority_order_qty();
 
 private:
 	int total_num_orders = 0;

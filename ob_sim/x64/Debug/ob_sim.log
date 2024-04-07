@@ -1,6 +1,2 @@
-﻿  limit_price_queue.cpp
-  main.cpp
-  order.cpp
-  test.cpp
-  Generating Code...
+﻿  main.cpp
   ob_sim.vcxproj -> C:\Users\woonjeng\Desktop\cpp\ob_sim\x64\Debug\ob_sim.exe

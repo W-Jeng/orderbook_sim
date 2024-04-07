@@ -6,7 +6,7 @@ Test::Test() {};
 
 void Test::QueueTest() {
 	BasicOrder order1{ "a1", 100 };
-	BasicOrder order2{ "a2", 200 };
+	BasicOrder order2{ "a2", -200 };
 	LimitPriceQueue limit_price_queue;
 	limit_price_queue.add_order(order1);
 	limit_price_queue.add_order(order2);

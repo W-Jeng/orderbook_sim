@@ -1,9 +1,10 @@
 #include <iostream>
 #include "test.h"
 
-int main()
-{   
+int main() {   
     Test test;
     test.QueueTest();
+
+    return 0;
 }
 
