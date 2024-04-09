@@ -40,3 +40,13 @@ void LimitPriceQueue::print_status() {
 								std::cout << "Order Id: " << pair.first << ", Status: " << order_status_to_str(pair.second.order_status) << "\n";
 				return;
 }
+
+bool LimitPriceQueue::operator<(const LimitPriceQueue& other) const {
+				if (limit_price < other.limit_price) return true;
+				else false;
+}
+
+bool LimitPriceQueue::operator>(const LimitPriceQueue& other) const {
+				if (limit_price > other.limit_price) return true;
+				else false;
+}

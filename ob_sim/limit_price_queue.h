@@ -12,6 +12,8 @@ public:
 				void cancel_order(const std::string& order_id);
 				void print_status();
 				BasicOrder* get_priority_order();
+				bool operator<(const LimitPriceQueue& other) const;
+				bool operator>(const LimitPriceQueue& other) const;
 
 private:
 				int total_num_orders = 0;
