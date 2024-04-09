@@ -5,6 +5,8 @@ int main() {
     Test test;
     test.QueueTest();
 
+    test.PriorityQueueTest();
+
     return 0;
 }
 

@@ -15,6 +15,6 @@ public:
 
 private:
 				int total_num_orders = 0;
-				std::queue<BasicOrder> order_queue;
-				std::unordered_map<std::string, BasicOrder> order_status_map;
+				std::queue<BasicOrder> order_queue; //first in first out
+				std::unordered_map<std::string, BasicOrder> order_status_map; //constant lookup to check whether it has been cancelled
 };

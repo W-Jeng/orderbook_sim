@@ -1,6 +1,7 @@
 #include "test.h"
 #include "limit_price_queue.h"
 #include "order.h"
+#include "order_book.h"
 #include<iostream>
 
 Test::Test() {};
@@ -20,5 +21,10 @@ void Test::QueueTest() {
         << order_status_to_str(order3->order_status) << "\n";
 
     return;
+};
+
+void Test::PriorityQueueTest() {
+    OrderBook order_book;
+
 };
 
