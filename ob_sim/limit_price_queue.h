@@ -1,6 +1,4 @@
 #pragma once
-#ifndef LIMIT_PRICE_QUEUE_H
-#define LIMIT_PRICE_QUEUE_H
 
 #include<queue>
 #include<unordered_map>
@@ -8,17 +6,15 @@
 
 class LimitPriceQueue {
 public:
-	LimitPriceQueue();
-	
-	void add_order(const BasicOrder& basic_order);
-	void cancel_order(const std::string& order_id);
-	void print_status();
-	BasicOrder* get_priority_order();
+				LimitPriceQueue(const double& limit_price);
+				const double limit_price;
+				void add_order(const BasicOrder& basic_order);
+				void cancel_order(const std::string& order_id);
+				void print_status();
+				BasicOrder* get_priority_order();
 
 private:
-	int total_num_orders = 0;
-	std::queue<BasicOrder> order_queue;
-	std::unordered_map<std::string, BasicOrder> order_status_map;
+				int total_num_orders = 0;
+				std::queue<BasicOrder> order_queue;
+				std::unordered_map<std::string, BasicOrder> order_status_map;
 };
-
-#endif
