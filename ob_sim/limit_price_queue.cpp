@@ -41,8 +41,14 @@ void LimitPriceQueue::print_status() {
 				return;
 }
 
+
 bool LimitPriceQueue::operator<(const LimitPriceQueue& other) const {
 				if (limit_price < other.limit_price) return true;
+				else false;
+}
+
+bool LimitPriceQueue::operator>(const LimitPriceQueue& other) const {
+				if (limit_price > other.limit_price) return true;
 				else false;
 }
 

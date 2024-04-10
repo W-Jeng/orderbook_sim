@@ -16,7 +16,7 @@ struct BasicOrder {
 
 struct DirectionalOrder {
 				std::string order_id;
-				const double limit_price;
+				double limit_price;
 				long int quantity;
 };
 
