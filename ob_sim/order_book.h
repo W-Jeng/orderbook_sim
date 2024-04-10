@@ -4,8 +4,8 @@
 #include "limit_price_queue.h"
 #include<iostream>
 
-using max_heap = std::priority_queue<LimitPriceQueue, std::vector<LimitPriceQueue>, std::less<LimitPriceQueue>>;
-using min_heap = std::priority_queue<LimitPriceQueue, std::vector<LimitPriceQueue>, std::greater<LimitPriceQueue>>;
+using max_heap = std::priority_queue<double, std::vector<double>, std::less<double>>;
+using min_heap = std::priority_queue<double, std::vector<double>, std::greater<double>>;
 
 enum BookSide {
     Bid,

@@ -7,6 +7,7 @@
 class LimitPriceQueue {
 public:
 				LimitPriceQueue(const double& limit_price);
+
 				void add_order(const BasicOrder& basic_order);
 				void cancel_order(const std::string& order_id);
 				void print_status();

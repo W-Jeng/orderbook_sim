@@ -1,7 +1,4 @@
-﻿  limit_price_queue.cpp
-  order_book.cpp
-C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(18,81): warning C4838: conversion from 'const long' to 'unsigned long' requires a narrowing conversion
-C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(30,64): warning C4838: conversion from 'long' to 'unsigned long' requires a narrowing conversion
-  test.cpp
-  Generating Code...
+﻿  order_book.cpp
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(16,81): warning C4838: conversion from 'const long' to 'unsigned long' requires a narrowing conversion
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(32,64): warning C4838: conversion from 'long' to 'unsigned long' requires a narrowing conversion
   ob_sim.vcxproj -> C:\Users\woonjeng\Desktop\cpp\ob_sim\x64\Debug\ob_sim.exe

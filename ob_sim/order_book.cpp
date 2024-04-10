@@ -4,19 +4,17 @@ OrderBook::OrderBook() {};
 
 void OrderBook::add_order(const DirectionalOrder& directional_order) {
     // push new LimitPriceQueue at the particular price, if the price point does't exist at that point
-    std::cout << "here 1";
     if (directional_order.quantity > 0) {
         // check if bid order book exists at the limit price
         if (bid_price_map.find(directional_order.limit_price) == bid_price_map.end()) {
             // cannot find it, then create one
             LimitPriceQueue limit_price_queue = LimitPriceQueue(directional_order.limit_price);
-            // bid_book.push(limit_price_queue);
+            bid_book.push(directional_order.limit_price);
             bid_price_map.emplace(directional_order.limit_price, limit_price_queue);
-            std::cout << "here added!" << "\n";
         }
         // create basic order to the particular LimitPriceQueue
         BasicOrder basic_order = { directional_order.order_id, directional_order.quantity };
-
+        bid_price_map.at(directional_order.limit_price).add_order(basic_order);
         
     } else {
         // check if ask order book exists at the limit price
