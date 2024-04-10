@@ -25,6 +25,8 @@ void Test::QueueTest() {
 
 void Test::PriorityQueueTest() {
     OrderBook order_book;
-
+    DirectionalOrder directional_order = {"A1", 1.51, 100};
+    order_book.add_order(directional_order);
+    order_book.print_maps();
 };
 

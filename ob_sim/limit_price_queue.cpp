@@ -1,7 +1,7 @@
 #include "limit_price_queue.h"
 #include<iostream>
 
-LimitPriceQueue::LimitPriceQueue(const double& limit_price):limit_price(limit_price) {};
+LimitPriceQueue::LimitPriceQueue(const double& set_limit_price):limit_price(set_limit_price) {};
 
 void LimitPriceQueue::add_order(const BasicOrder& basic_order) {
 				order_queue.push(basic_order);
@@ -42,6 +42,7 @@ void LimitPriceQueue::print_status() {
 }
 
 
+/*
 bool LimitPriceQueue::operator<(const LimitPriceQueue& other) const {
 				if (limit_price < other.limit_price) return true;
 				else false;
@@ -56,3 +57,4 @@ bool LimitPriceQueue::operator>(const LimitPriceQueue& other) const {
 				if (limit_price > other.limit_price) return true;
 				else false;
 }
+*/

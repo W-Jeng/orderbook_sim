@@ -10,11 +10,9 @@ const std::string order_status_to_str(const OrderStatus& order_status) {
 
         case OrderStatus::FILLED:
             return "FILLED";
-            break;
 
         case OrderStatus::CANCELLED:
             return "CANCELLED";
-            break;
                 
         default:
             return "UNKNOWN STATUS";

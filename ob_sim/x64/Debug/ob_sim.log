@@ -1,22 +1,7 @@
 ﻿  limit_price_queue.cpp
   order_book.cpp
-C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(14,58): error C2280: 'LimitPriceQueue &LimitPriceQueue::operator =(const LimitPriceQueue &)': attempting to reference a deleted function
-  C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\limit_price_queue.h(22,1):
-  compiler has generated 'LimitPriceQueue::operator =' here
-  C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\limit_price_queue.h(22,1):
-  'LimitPriceQueue &LimitPriceQueue::operator =(const LimitPriceQueue &)': function was implicitly deleted because 'LimitPriceQueue' has a data member 'LimitPriceQueue::limit_price' of const-qualified non-class type
-  C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\limit_price_queue.h(10,18):
-  see declaration of 'LimitPriceQueue::limit_price'
-  
-C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(17,81): warning C4838: conversion from 'const long' to 'unsigned long' requires a narrowing conversion
-C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(26,64): warning C4838: conversion from 'long' to 'unsigned long' requires a narrowing conversion
-C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(32,17): error C2039: 'update_bid_book': is not a member of 'OrderBook'
-  C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.h(9,7):
-  see declaration of 'OrderBook'
-  
-C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(37,17): error C2039: 'update_ask_book': is not a member of 'OrderBook'
-  C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.h(9,7):
-  see declaration of 'OrderBook'
-  
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(18,81): warning C4838: conversion from 'const long' to 'unsigned long' requires a narrowing conversion
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(30,64): warning C4838: conversion from 'long' to 'unsigned long' requires a narrowing conversion
   test.cpp
   Generating Code...
+  ob_sim.vcxproj -> C:\Users\woonjeng\Desktop\cpp\ob_sim\x64\Debug\ob_sim.exe
