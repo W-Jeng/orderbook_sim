@@ -41,6 +41,10 @@ void LimitPriceQueue::print_status() {
 				return;
 }
 
+void LimitPriceQueue::fill_order(const int& quantity) {
+				// this function doesnt check
+				return;
+}
 
 /*
 bool LimitPriceQueue::operator<(const LimitPriceQueue& other) const {

@@ -13,6 +13,7 @@ public:
 				void print_status();
 				BasicOrder* get_priority_order();
 				inline const double get_limit_price() { return limit_price; };
+				void fill_order(const int& quantity);
 				//bool operator<(const LimitPriceQueue& other) const;
 				//bool operator>(const LimitPriceQueue& other) const;
 				//LimitPriceQueue& operator=(const LimitPriceQueue& other);

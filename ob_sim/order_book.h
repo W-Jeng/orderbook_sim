@@ -16,7 +16,7 @@ class OrderBook {
 public:
     OrderBook();
     void add_order(const DirectionalOrder& directional_order);
-    void match_order();
+    void match_order(const BookSide& new_order_side);
     void print_maps();
 
 private:
