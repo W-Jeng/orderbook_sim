@@ -9,6 +9,7 @@ enum OrderStatus {
 };
 
 struct BasicOrder {
+				//BasicOrder(std::string temp_order_id, unsigned long int temp_quantity);
 				std::string order_id;
 				unsigned long int quantity;
 				OrderStatus order_status = OrderStatus::ACTIVE; //active by nature

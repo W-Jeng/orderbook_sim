@@ -7,10 +7,9 @@ void OrderBook::add_order(const DirectionalOrder& directional_order) {
     if (directional_order.quantity > 0) {
         // check if bid order book exists at the limit price
         if (bid_price_map.find(directional_order.limit_price) == bid_price_map.end()) {
-            // cannot find it, then create one
-            LimitPriceQueue limit_price_queue = LimitPriceQueue(directional_order.limit_price);
+            // if cannot find it, then create one
             bid_book.push(directional_order.limit_price);
-            bid_price_map.emplace(directional_order.limit_price, limit_price_queue);
+            bid_price_map.emplace(directional_order.limit_price, LimitPriceQueue(directional_order.limit_price));
         }
         // create basic order to the particular LimitPriceQueue
         BasicOrder basic_order = { directional_order.order_id, directional_order.quantity };
@@ -20,19 +19,22 @@ void OrderBook::add_order(const DirectionalOrder& directional_order) {
         // check if ask order book exists at the limit price
         if (ask_price_map.find(directional_order.limit_price) == ask_price_map.end()) {
             // cannot find it, then create one 
-            LimitPriceQueue limit_price_queue = LimitPriceQueue(directional_order.limit_price);
-            // ask_book.push(limit_price_queue);
-           
+            ask_book.push(directional_order.limit_price);
+            ask_price_map.emplace(directional_order.limit_price, LimitPriceQueue(directional_order.limit_price));
         }
         // create basic order to the particular LimitPriceQueue
         BasicOrder basic_order = { directional_order.order_id, -directional_order.quantity };
-        
+        ask_price_map.at(directional_order.limit_price).add_order(basic_order);
     }
+    match_order();
     return;
 }
 
-void OrderBook::update_book(const BasicOrder& basic_order, const BookSide) {
-
+void OrderBook::match_order() {
+    if (!bid_book.empty() && !ask_book.empty() && bid_book.top() >= ask_book.top()) {
+        std::cout << "matches order here!" << "\n";
+        std::cout << "top of bid book: " << bid_book.top() << ", top of ask book " << ask_book.top() << "\n";
+    }
     return;
 }
 
@@ -40,6 +42,8 @@ void OrderBook::print_maps() {
     for (auto& pair : bid_price_map) {
         std::cout << "Limit Price: " << pair.first << ", Value: ";
         LimitPriceQueue temp = pair.second;
-        std::cout << temp.get_limit_price();
+        std::cout << temp.get_limit_price() << "\n";
     }
 }
+
+
