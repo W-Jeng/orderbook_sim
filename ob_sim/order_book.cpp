@@ -46,7 +46,19 @@ void OrderBook::match_order(const BookSide& new_order_side) {
         BasicOrder* bid_order = bid_order_queue.get_priority_order();
         BasicOrder* ask_order = ask_order_queue.get_priority_order();
 
-        
+        if (bid_order != nullptr && ask_order != nullptr) {
+            // means there's order in the top queue
+            const int matching_quantity = std::min(bid_order->quantity, ask_order->quantity);
+            // match the trade by filling the bid order using its member function.
+        } 
+
+        if (bid_order == nullptr) {
+            // remove top price on bid_order + removing the price at bid_price_map
+        }
+
+        if (ask_order == nullptr) {
+            // remove top price on ask_order + removing the price at ask_price_map
+        }
     }
     return;
 }

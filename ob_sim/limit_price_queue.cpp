@@ -42,7 +42,8 @@ void LimitPriceQueue::print_status() {
 }
 
 void LimitPriceQueue::fill_order(const int& quantity) {
-				// this function doesnt check
+				// fill the order by subtracting then check if the underlying front queue has zero quantity
+				// if zero quantity or status = cancelled then pop the front
 				return;
 }
 
