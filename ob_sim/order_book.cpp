@@ -50,14 +50,20 @@ void OrderBook::match_order(const BookSide& new_order_side) {
             // means there's order in the top queue
             const int matching_quantity = std::min(bid_order->quantity, ask_order->quantity);
             // match the trade by filling the bid order using its member function.
+            bid_order_queue.fill_order(matching_quantity);
+            ask_order_queue.fill_order(matching_quantity);
         } 
 
         if (bid_order == nullptr) {
             // remove top price on bid_order + removing the price at bid_price_map
+            bid_price_map.erase(bid_book.top());
+            bid_book.pop();
         }
 
         if (ask_order == nullptr) {
             // remove top price on ask_order + removing the price at ask_price_map
+            ask_price_map.erase(ask_book.top());
+            ask_book.pop();
         }
     }
     return;

@@ -41,9 +41,15 @@ void LimitPriceQueue::print_status() {
 				return;
 }
 
-void LimitPriceQueue::fill_order(const int& quantity) {
+void LimitPriceQueue::fill_order(const int& fill_quantity) {
 				// fill the order by subtracting then check if the underlying front queue has zero quantity
 				// if zero quantity or status = cancelled then pop the front
+				order_queue.front().quantity -= fill_quantity;
+				std::cout << "order filled with quantity deduction of " << fill_quantity << "\n";
+				if (order_queue.front().quantity == 0) {
+								order_queue.pop();
+				}
+
 				return;
 }
 
