@@ -28,19 +28,26 @@ void Test::PriorityQueueTest() {
     DirectionalOrder directional_order = {"A1", 1.51, 100};
     order_book.add_order(directional_order);
 
-    DirectionalOrder directional_order2 = { "A2", 1.50, 50 };
+    DirectionalOrder directional_order2 = { "A2", 1.51, -50 };
     order_book.add_order(directional_order2);
 
-    DirectionalOrder directional_order3 = { "A3", 1.51, -100 };
-    order_book.add_order(directional_order3);
+    DirectionalOrder directional_order3 = { "A3", 1.51, 100 };
+    order_book.add_order(directional_order);
 
-    DirectionalOrder directional_order4 = { "A4", 1.50, -100 };
+    DirectionalOrder directional_order4 = { "A4", 1.50, -125 };
     order_book.add_order(directional_order4);
 
-    DirectionalOrder directional_order5 = { "A5", 1.52, 500 };
+    DirectionalOrder directional_order5= { "A5", 1.52, 300 };
     order_book.add_order(directional_order5);
 
+    DirectionalOrder directional_order6 = { "A6", 1.52, 100 };
+    order_book.add_order(directional_order6);
 
-    order_book.print_maps();
+    order_book.tabulate_order_book();
+
+    DirectionalOrder directional_order7 = { "A7", 1.51, -450 };
+    order_book.add_order(directional_order7);
+
+    order_book.tabulate_order_book();
 };
 

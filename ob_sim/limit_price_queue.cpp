@@ -7,6 +7,7 @@ void LimitPriceQueue::add_order(const BasicOrder& basic_order) {
 				order_queue.push(basic_order);
 				order_status_map[basic_order.order_id] = basic_order;
 				total_num_orders++;
+				total_volume += basic_order.quantity;
 				return;
 }
 
@@ -17,6 +18,7 @@ void LimitPriceQueue::cancel_order(const std::string& order_id) {
 				if (order_status_map.find(order_id) != order_status_map.end()) {
 								order_status_map[order_id].order_status = OrderStatus::CANCELLED;
 								total_num_orders--;
+								total_volume -= order_status_map[order_id].quantity;
 				}
 				return;
 }			
@@ -45,27 +47,13 @@ void LimitPriceQueue::fill_order(const int& fill_quantity) {
 				// fill the order by subtracting then check if the underlying front queue has zero quantity
 				// if zero quantity or status = cancelled then pop the front
 				order_queue.front().quantity -= fill_quantity;
-				std::cout << "order filled with quantity deduction of " << fill_quantity << "\n";
+				total_volume -= fill_quantity;
+				std::cout << "order filled with quantity deduction of " << fill_quantity << ", leftover quantity at front :" << order_queue.front().quantity << "\n";
+
 				if (order_queue.front().quantity == 0) {
 								order_queue.pop();
+								total_num_orders--;
 				}
 
 				return;
 }
-
-/*
-bool LimitPriceQueue::operator<(const LimitPriceQueue& other) const {
-				if (limit_price < other.limit_price) return true;
-				else false;
-}
-
-bool LimitPriceQueue::operator>(const LimitPriceQueue& other) const {
-				if (limit_price > other.limit_price) return true;
-				else false;
-}
-
-bool LimitPriceQueue::operator>(const LimitPriceQueue& other) const {
-				if (limit_price > other.limit_price) return true;
-				else false;
-}
-*/
