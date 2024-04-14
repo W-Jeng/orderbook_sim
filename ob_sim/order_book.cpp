@@ -80,7 +80,7 @@ void OrderBook::tabulate_order_book() {
         sorted_ask_prices.push_back(pair.first);
     }
     std::sort(sorted_bid_prices.begin(), sorted_bid_prices.end(), std::greater<>());
-    std::sort(sorted_ask_prices.begin(), sorted_ask_prices.end(), std::greater<>());
+    std::sort(sorted_ask_prices.begin(), sorted_ask_prices.end(), std::less<>());
 
     // we go through level by level to print its item
     for (int i = 0; i < std::max(sorted_bid_prices.size(), sorted_ask_prices.size()); ++i) {

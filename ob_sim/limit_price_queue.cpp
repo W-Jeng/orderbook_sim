@@ -51,13 +51,12 @@ void LimitPriceQueue::fill_order(const int& fill_quantity) {
 				// if zero quantity or status = cancelled then pop the front
 				order_queue.front().quantity -= fill_quantity;
 				total_volume -= fill_quantity;
-				std::cout << "order filled with quantity deduction of " << fill_quantity << ", leftover quantity at front :" << order_queue.front().quantity << "\n";
 
 				if (order_queue.front().quantity == 0) {
 								order_queue.pop();
 								total_num_orders--;
 				}
-				//ensuring the front queue has an active orders
+				//ensuring the front queue has an active orders or just leave it as empty queue
 				while (!order_queue.empty() && order_status_map[order_queue.front().order_id].order_status == OrderStatus::CANCELLED) {
 								order_queue.pop();
 				}

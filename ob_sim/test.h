@@ -1,9 +1,12 @@
 #pragma once
 
 class Test {
-    public:
+public:
     Test();
     static void QueueTest();
     static void PriorityQueueTest();
+    static void LobPromptTest();
+    static void TestConnection();
+    
 };
 

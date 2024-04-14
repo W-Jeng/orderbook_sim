@@ -3,7 +3,8 @@
 #include "order.h"
 #include "order_book.h"
 #include<iostream>
-
+#include <sstream>
+#include "stock_exchange.h"
 Test::Test() {};
 
 void Test::QueueTest() {
@@ -49,5 +50,38 @@ void Test::PriorityQueueTest() {
     order_book.add_order(directional_order7);
 
     order_book.tabulate_order_book();
+    return;
 };
 
+void Test::LobPromptTest() {
+    std::string input;
+    std::string order_id;
+    double limit_price;
+    int quantity;
+    OrderBook order_book;
+    DirectionalOrder directional_order;
+    std::cout << "Enter order_id, limit price, quantity: ";
+
+    while(std::getline(std::cin, input)) {
+        std::stringstream ss(input);
+        ss >> order_id >> limit_price >> quantity;
+
+        if (ss.fail()) {
+            break;
+        }
+
+        directional_order = { order_id, limit_price, quantity };
+        order_book.add_order(directional_order);
+        order_book.tabulate_order_book();
+
+        std::cout << "Enter order_id, limit price, quantity: ";
+    }
+    return;
+}
+
+void Test::TestConnection() {
+    StockExchange& stock_exchange1 = StockExchange::set_connection();
+    StockExchange& stock_exchange2 = StockExchange::set_connection();
+
+    return;
+}
