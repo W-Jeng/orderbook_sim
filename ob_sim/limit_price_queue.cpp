@@ -19,22 +19,25 @@ void LimitPriceQueue::cancel_order(const std::string& order_id) {
 								order_status_map[order_id].order_status = OrderStatus::CANCELLED;
 								total_num_orders--;
 								total_volume -= order_status_map[order_id].quantity;
-				}
-				return;
-}			
 
-BasicOrder* LimitPriceQueue::get_priority_order() {
-				// first we should check whether the highest order is cancelled or not
-				// if cancelled then we take off top order and continue searching for active order
-				while (!order_queue.empty()) {
-								BasicOrder& highest_priority_order = order_queue.front();
-								if (order_status_map[highest_priority_order.order_id].order_status == OrderStatus::CANCELLED) {
+								if (order_queue.front().order_id == order_id) {
 												order_queue.pop();
-								} else if (order_status_map[highest_priority_order.order_id].order_status == OrderStatus::ACTIVE) {
-												return &highest_priority_order;
+												// ensuring that the head is always an active order
 								}
 				}
-				return nullptr;
+				return;
+}
+
+const int LimitPriceQueue::get_priority_order_quantity() {
+				// remember that priority order always has an active status!
+				return order_queue.front().quantity;
+}
+
+const bool LimitPriceQueue::is_empty() const {
+				if (order_queue.empty())
+								return true;
+				else
+								return false;
 }
 
 void LimitPriceQueue::print_status() {
@@ -53,6 +56,10 @@ void LimitPriceQueue::fill_order(const int& fill_quantity) {
 				if (order_queue.front().quantity == 0) {
 								order_queue.pop();
 								total_num_orders--;
+				}
+				//ensuring the front queue has an active orders
+				while (!order_queue.empty() && order_status_map[order_queue.front().order_id].order_status == OrderStatus::CANCELLED) {
+								order_queue.pop();
 				}
 
 				return;

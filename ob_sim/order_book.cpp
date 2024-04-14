@@ -29,37 +29,30 @@ void OrderBook::add_order(const DirectionalOrder& directional_order) {
         ask_price_map.at(directional_order.limit_price).add_order(basic_order);
         new_order_side = BookSide::Ask;
     }
-    match_order(new_order_side);
+    OrderBook::match_order(new_order_side);
     return;
 }
 
 void OrderBook::match_order(const BookSide& new_order_side) {
     while (!bid_book.empty() && !ask_book.empty() && bid_book.top() >= ask_book.top()) {
         // remember that although the top of the book isn't cancelled status, that doesnt mean that after matching order, we will always see active orders
-      
         const double matching_price = (new_order_side == BookSide::Bid) ? ask_book.top() : bid_book.top();
         LimitPriceQueue* bid_order_queue = &bid_price_map.at(bid_book.top());
         LimitPriceQueue* ask_order_queue = &ask_price_map.at(ask_book.top());
         
-        BasicOrder* bid_order = bid_order_queue -> get_priority_order();
-        BasicOrder* ask_order = ask_order_queue -> get_priority_order();
+        if (!bid_order_queue->is_empty() && !ask_order_queue->is_empty()) {
+            const int matching_quantity = std::min(bid_order_queue->get_priority_order_quantity(), ask_order_queue->get_priority_order_quantity());
+            bid_order_queue->fill_order(matching_quantity);
+            ask_order_queue->fill_order(matching_quantity);
+        }
 
-        if (bid_order != nullptr && ask_order != nullptr) {
-            // means there's order in the top queue
-            const int matching_quantity = std::min(bid_order->quantity, ask_order->quantity);
-            // match the trade by filling the bid order using its member function.
-            bid_order_queue -> fill_order(matching_quantity);
-            ask_order_queue -> fill_order(matching_quantity);
-            std::cout << "filled at price: " << matching_price << "\n";
-        } 
-
-        if (bid_order_queue->get_priority_order() == nullptr) {
+        if (bid_order_queue->is_empty()) {
             // remove top price on bid_order + removing the price at bid_price_map
             bid_price_map.erase(bid_book.top());
             bid_book.pop();
         }
 
-        if (ask_order_queue->get_priority_order() == nullptr) {
+        if (ask_order_queue->is_empty()) {
             // remove top price on ask_order + removing the price at ask_price_map
             ask_price_map.erase(ask_book.top());
             ask_book.pop();

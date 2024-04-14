@@ -11,7 +11,8 @@ public:
 				void add_order(const BasicOrder& basic_order);
 				void cancel_order(const std::string& order_id);
 				void print_status();
-				BasicOrder* get_priority_order();
+				const int get_priority_order_quantity();
+				const bool is_empty() const;
 				inline const double get_limit_price() { return limit_price; };
 				inline const int get_total_num_orders() { return total_num_orders; };
 				inline const int get_total_volume() { return total_volume; };

@@ -1,2 +1,11 @@
-﻿  test.cpp
+﻿  order_book.cpp
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(17,81): warning C4838: conversion from 'const long' to 'unsigned long' requires a narrowing conversion
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(28,64): warning C4838: conversion from 'long' to 'unsigned long' requires a narrowing conversion
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(69,77): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(87,102): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(88,99): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(89,97): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(97,97): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(98,99): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\order_book.cpp(99,102): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
   ob_sim.vcxproj -> C:\Users\woonjeng\Desktop\cpp\ob_sim\x64\Debug\ob_sim.exe
