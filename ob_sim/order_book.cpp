@@ -44,6 +44,8 @@ void OrderBook::match_order(const BookSide& new_order_side) {
             const int matching_quantity = std::min(bid_order_queue->get_priority_order_quantity(), ask_order_queue->get_priority_order_quantity());
             bid_order_queue->fill_order(matching_quantity);
             ask_order_queue->fill_order(matching_quantity);
+            last_done_price = matching_price;
+            last_done_quantity = matching_quantity;
         }
 
         if (bid_order_queue->is_empty()) {
@@ -88,9 +90,7 @@ void OrderBook::tabulate_order_book() {
             std::cout << temp.get_total_volume() << empty_space(table_column_spacing["BidVolume"] - std::to_string(temp.get_total_volume()).length());
             std::cout << temp.get_limit_price() << empty_space(table_column_spacing["BidPrice"] - double_to_string(temp.get_limit_price()).length());
         } else {
-            std::cout << empty_space(table_column_spacing["BidOrder"]);
-            std::cout << empty_space(table_column_spacing["BidVolume"]);
-            std::cout << empty_space(table_column_spacing["BidPrice"]);
+            std::cout << empty_space(table_column_spacing["BidOrder"]+ table_column_spacing["BidVolume"]+table_column_spacing["BidPrice"]);
         }
         if (i < sorted_ask_prices.size()) {
             LimitPriceQueue temp = ask_price_map.at(sorted_ask_prices[i]);
@@ -98,14 +98,18 @@ void OrderBook::tabulate_order_book() {
             std::cout << temp.get_total_volume() << empty_space(table_column_spacing["AskVolume"] - std::to_string(temp.get_total_volume()).length());
             std::cout << temp.get_total_num_orders() << empty_space(table_column_spacing["AskOrder"] - std::to_string(temp.get_total_num_orders()).length());
         } else {
-            std::cout << empty_space(table_column_spacing["AskPrice"]);
-            std::cout << empty_space(table_column_spacing["AskVolume"]);
-            std::cout << empty_space(table_column_spacing["AskOrder"]);
+            std::cout << empty_space(table_column_spacing["AskPrice"]+table_column_spacing["AskVolume"]+table_column_spacing["AskOrder"]);
         }
         std::cout << "\n";
     }
     std::cout << "-------------------------------------------------------------------------------------\n";
-
+    return;
 }
 
+double OrderBook::get_bid_ask_spread() const {
+    if (!bid_book.empty() && !ask_book.empty()) {
+        return ask_book.top() - bid_book.top();
+    }
+    return -1.0;
+}
 
