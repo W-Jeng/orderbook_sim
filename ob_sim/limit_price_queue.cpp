@@ -20,9 +20,9 @@ void LimitPriceQueue::cancel_order(const std::string& order_id) {
 								total_num_orders--;
 								total_volume -= order_status_map[order_id].quantity;
 
+								// ensuring that the head is always an active order
 								if (order_queue.front().order_id == order_id) {
-												order_queue.pop();
-												// ensuring that the head is always an active order
+												order_queue.pop(); 
 								}
 				}
 				return;
