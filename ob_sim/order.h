@@ -21,4 +21,23 @@ struct DirectionalOrder {
 				long int quantity;
 };
 
+enum TimeEnforcementType {
+				GOODTILLCANCEL,
+				FILLORKILL
+};
+
+class ClientOrder {
+public:
+				ClientOrder();
+
+private:
+				std::string order_id;
+				long int quantity;
+				double take_profit_price;
+				double stop_loss;
+				TimeEnforcementType time_enforcement_type;
+				OrderStatus order_status;
+				std::string order_time_submitted;
+};
+
 const std::string order_status_to_str(const OrderStatus& order_status);
