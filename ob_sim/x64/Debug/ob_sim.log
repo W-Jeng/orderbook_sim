@@ -1,2 +1,9 @@
-﻿  order.cpp
+﻿  stock_exchange.cpp
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\stock_exchange.cpp(28,61): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\stock_exchange.cpp(28,61): warning C4267:         with
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\stock_exchange.cpp(28,61): warning C4267:         [
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\stock_exchange.cpp(28,61): warning C4267:             _Ty=int
+C:\Users\woonjeng\Desktop\cpp\ob_sim\ob_sim\stock_exchange.cpp(28,61): warning C4267:         ]
+  test.cpp
+  Generating Code...
   ob_sim.vcxproj -> C:\Users\woonjeng\Desktop\cpp\ob_sim\x64\Debug\ob_sim.exe
