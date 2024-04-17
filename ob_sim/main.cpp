@@ -7,7 +7,8 @@ int main() {
     // test.PriorityQueueTest();
     
     // test.LobPromptTest();
-    test.TestConnection();
+    // test.TestConnection();
+    test.TestOrder();
     return 0;
 }
 

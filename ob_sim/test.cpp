@@ -85,3 +85,9 @@ void Test::TestConnection() {
 
     return;
 }
+
+void Test::TestOrder() {
+    ClientOrder client_order("SPY", 100, 0, 0, TimeEnforcementType::GOODTILLCANCEL);
+
+    return;
+}

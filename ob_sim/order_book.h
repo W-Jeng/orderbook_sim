@@ -28,11 +28,5 @@ private:
     int last_done_quantity;
     std::unordered_map<double, LimitPriceQueue> bid_price_map; // key holds the price, value holds LimitPriceQueue as we can add new orders at "not the top"
     std::unordered_map<double, LimitPriceQueue> ask_price_map;
-    const std::vector<std::string> ordered_table_columns = { "BidOrder", "BidVolume", "BidPrice", "AskPrice", "AskVolume", "AskOrder" };
-    std::unordered_map<std::string, int> table_column_spacing = {{"BidOrder", 15},
-                                                                {"BidVolume", 15},
-                                                                {"BidPrice", 15},
-                                                                {"AskPrice", 15},
-                                                                {"AskVolume", 15},
-                                                                {"AskOrder", 15}};
+    
 };

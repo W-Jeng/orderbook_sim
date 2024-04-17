@@ -67,6 +67,13 @@ void OrderBook::match_order(const BookSide& new_order_side) {
 void OrderBook::tabulate_order_book() {
     // tabulate columns in order:
     // Bid Side [Order, Volume, Buy],  || Ask Side [Sell, Volume, Order]
+    static const std::vector<std::string> ordered_table_columns = { "BidOrder", "BidVolume", "BidPrice", "AskPrice", "AskVolume", "AskOrder" };
+    static std::unordered_map<std::string, int> table_column_spacing = { {"BidOrder", 15},
+                                                                        {"BidVolume", 15},
+                                                                        {"BidPrice", 15},
+                                                                        {"AskPrice", 15},
+                                                                        {"AskVolume", 15},
+                                                                        {"AskOrder", 15} };
     for (auto& col_name : ordered_table_columns) {
         std::cout << col_name << empty_space(table_column_spacing[col_name] - col_name.length());
     }

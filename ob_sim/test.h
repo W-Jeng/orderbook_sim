@@ -7,6 +7,6 @@ public:
     static void PriorityQueueTest();
     static void LobPromptTest();
     static void TestConnection();
-    
+    static void TestOrder();
 };
 
