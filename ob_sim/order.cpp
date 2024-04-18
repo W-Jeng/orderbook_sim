@@ -39,3 +39,4 @@ ClientOrder::ClientOrder(std::string temp_ticker, long int temp_quantity, double
     int day = static_cast<unsigned>(year_month_day.day());
     std::cout << "year: " << year << ", month: " << month << ", day: " << day << "\n";
 };
+

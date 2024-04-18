@@ -4,8 +4,13 @@
 
 class Account {
 public:
-    void submit_order(StockExchange& stock_exchange);
-private:
+    Account();
+    bool submit_order(const ClientOrder& client_order);
 
+private:
+    StockExchange stock_exchange;
+    double capital;
+    double net_asset_value;
+    std::unordered_map<std::string, int> stock_inventory;
 };
 

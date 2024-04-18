@@ -19,6 +19,7 @@ public:
     void match_order(const BookSide& new_order_side);
     void tabulate_order_book();
     double get_bid_ask_spread() const;
+
 private:
     // max heap, get largest bid price at O(1)
     // min heap, get smallest ask price at O(1)

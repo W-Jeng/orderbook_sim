@@ -10,7 +10,8 @@
 class StockExchange {
 public:
     static StockExchange& set_connection();
-    
+    void receive_order(const ClientOrder& client_order);
+
 private:
     StockExchange();
     void init_ticker(const std::string& ticker);

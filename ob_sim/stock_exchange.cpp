@@ -39,3 +39,8 @@ const std::string StockExchange::ensure_order_id_uniqueness(const std::string& o
     }
     return StockExchange::get_randomized_order_id();
 };
+
+void StockExchange::receive_order(const ClientOrder& client_order) {
+
+    return;
+};
