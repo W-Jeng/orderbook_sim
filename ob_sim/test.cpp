@@ -5,6 +5,8 @@
 #include<iostream>
 #include <sstream>
 #include "stock_exchange.h"
+#include "account.h"
+
 Test::Test() {};
 
 void Test::QueueTest() {
@@ -87,7 +89,15 @@ void Test::TestConnection() {
 }
 
 void Test::TestOrder() {
-    ClientOrder client_order("SPY", 100, 0, 0, TimeEnforcementType::GOODTILLCANCEL);
+    ClientOrder client_order("SPY", 100, 10.0, 0, 0, TimeEnforcementType::GOODTILLCANCEL);
 
     return;
 }
+
+void Test::TestAccount() {
+    Account account;
+    bool order_valid = account.submit_order(ClientOrder("SPY", 100, 10.0, 0, 0, TimeEnforcementType::GOODTILLCANCEL));
+    bool order_valid2 = account.submit_order(ClientOrder("SPY", 200, 10.1, 0, 0, TimeEnforcementType::GOODTILLCANCEL));
+    bool order_valid3 = account.submit_order(ClientOrder("SPY", -100, 10.2, 0, 0, TimeEnforcementType::GOODTILLCANCEL));
+    return;
+};

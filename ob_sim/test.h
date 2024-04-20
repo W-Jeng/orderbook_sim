@@ -8,5 +8,6 @@ public:
     static void LobPromptTest();
     static void TestConnection();
     static void TestOrder();
+    static void TestAccount();
 };
 

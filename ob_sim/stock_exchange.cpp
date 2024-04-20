@@ -40,7 +40,14 @@ const std::string StockExchange::ensure_order_id_uniqueness(const std::string& o
     return StockExchange::get_randomized_order_id();
 };
 
-void StockExchange::receive_order(const ClientOrder& client_order) {
-
-    return;
+bool StockExchange::receive_order(const ClientOrder& client_order) {
+    if (ticker_specific_ob.find(client_order.get_ticker()) != ticker_specific_ob.end()) {
+        const std::string unique_order_id = StockExchange::get_randomized_order_id();
+        const DirectionalOrder directional_order = { unique_order_id, client_order.get_limit_price(), client_order.get_quantity() };
+        ticker_specific_ob.at(client_order.get_ticker()).add_order(directional_order);
+        ticker_specific_ob.at(client_order.get_ticker()).tabulate_order_book();
+        return true;
+    } else {
+        return false;
+    }
 };

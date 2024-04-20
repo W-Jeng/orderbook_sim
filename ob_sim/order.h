@@ -28,13 +28,24 @@ enum TimeEnforcementType {
 
 class ClientOrder {
 public:
-				ClientOrder(std::string temp_ticker, long int temp_quantity, double temp_take_profit_price, double temp_stop_loss, TimeEnforcementType temp_time_enforcement_type);
+				ClientOrder(std::string temp_ticker, long int temp_quantity, double temp_limit_price, double temp_take_profit_price,
+																double temp_stop_loss, TimeEnforcementType temp_time_enforcement_type);
+				const std::string get_ticker() const;
+				const long int get_quantity() const;
+				const double get_limit_price() const;
+				const double get_take_profit() const;
+				const double get_stop_loss() const;
+				const TimeEnforcementType get_time_enforcement_type() const;
+				const OrderStatus get_order_status() const;
+				const std::string get_order_time_submitted() const;
+				void set_order_status(const OrderStatus& enum_type);
 
 private:
 				std::string ticker;
 				long int quantity;
+				double limit_price;
 				double take_profit_price;
-				double stop_loss;
+				double stop_loss_price;
 				TimeEnforcementType time_enforcement_type;
 				OrderStatus order_status;
 				std::string order_time_submitted;

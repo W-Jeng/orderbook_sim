@@ -10,7 +10,7 @@
 class StockExchange {
 public:
     static StockExchange& set_connection();
-    void receive_order(const ClientOrder& client_order);
+    bool receive_order(const ClientOrder& client_order);
 
 private:
     StockExchange();

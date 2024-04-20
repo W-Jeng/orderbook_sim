@@ -23,10 +23,10 @@ const std::string order_status_to_str(const OrderStatus& order_status) {
     return "";
 }
 
-ClientOrder::ClientOrder(std::string temp_ticker, long int temp_quantity, double temp_take_profit_price,
+ClientOrder::ClientOrder(std::string temp_ticker, long int temp_quantity, double temp_limit_price, double temp_take_profit_price,
                          double temp_stop_loss, TimeEnforcementType temp_time_enforcement_type):
-                         ticker(temp_ticker), quantity(temp_quantity), take_profit_price(temp_take_profit_price),
-                         stop_loss(temp_stop_loss), time_enforcement_type(temp_time_enforcement_type), order_status(OrderStatus::ACTIVE) {
+                         ticker(temp_ticker), quantity(temp_quantity), limit_price(temp_limit_price), take_profit_price(temp_take_profit_price),
+                         stop_loss_price(temp_stop_loss), time_enforcement_type(temp_time_enforcement_type), order_status(OrderStatus::ACTIVE) {
 
     const auto now = std::chrono::system_clock::now();
     const auto time_zone = std::chrono::current_zone();
@@ -40,3 +40,39 @@ ClientOrder::ClientOrder(std::string temp_ticker, long int temp_quantity, double
     std::cout << "year: " << year << ", month: " << month << ", day: " << day << "\n";
 };
 
+const std::string ClientOrder::get_ticker() const {
+    return ticker;
+}
+
+const long int ClientOrder::get_quantity() const {
+    return quantity;
+}
+
+const double ClientOrder::get_limit_price() const {
+    return limit_price;
+}
+
+const double ClientOrder::get_take_profit() const {
+    return take_profit_price;
+}
+
+const double ClientOrder::get_stop_loss() const {
+    return stop_loss_price;
+}
+
+const TimeEnforcementType ClientOrder::get_time_enforcement_type() const {
+    return time_enforcement_type;
+}
+
+const OrderStatus ClientOrder::get_order_status() const {
+    return order_status;
+}
+
+const std::string ClientOrder::get_order_time_submitted() const {
+    return order_time_submitted;
+}
+
+void ClientOrder::set_order_status(const OrderStatus& enum_type) {
+    order_status = enum_type;
+    return;
+}
