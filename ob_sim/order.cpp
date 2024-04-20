@@ -30,14 +30,9 @@ ClientOrder::ClientOrder(std::string temp_ticker, long int temp_quantity, double
 
     const auto now = std::chrono::system_clock::now();
     const auto time_zone = std::chrono::current_zone();
-    const auto local_time = time_zone->to_local(now);
-    const auto time_point = std::chrono::time_point_cast<std::chrono::days>(local_time);
-    const auto year_month_day = std::chrono::year_month_day{ time_point };
-
-    int year = static_cast<int>(year_month_day.year());
-    int month = static_cast<unsigned>(year_month_day.month());
-    int day = static_cast<unsigned>(year_month_day.day());
-    std::cout << "year: " << year << ", month: " << month << ", day: " << day << "\n";
+    order_time_submitted = time_zone->to_local(now);
+    std::cout << order_time_submitted << std::endl;
+    
 };
 
 const std::string ClientOrder::get_ticker() const {
@@ -68,7 +63,7 @@ const OrderStatus ClientOrder::get_order_status() const {
     return order_status;
 }
 
-const std::string ClientOrder::get_order_time_submitted() const {
+const std::chrono::local_time <std::chrono::system_clock::duration> ClientOrder::get_order_time_submitted() const {
     return order_time_submitted;
 }
 

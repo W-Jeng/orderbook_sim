@@ -1,7 +1,7 @@
 #pragma once
 
 #include<string>
-
+#include<chrono>
 enum OrderStatus {
 				ACTIVE,
 				FILLED,
@@ -37,7 +37,7 @@ public:
 				const double get_stop_loss() const;
 				const TimeEnforcementType get_time_enforcement_type() const;
 				const OrderStatus get_order_status() const;
-				const std::string get_order_time_submitted() const;
+				const std::chrono::local_time <std::chrono::system_clock::duration> get_order_time_submitted() const;
 				void set_order_status(const OrderStatus& enum_type);
 
 private:
@@ -48,7 +48,7 @@ private:
 				double stop_loss_price;
 				TimeEnforcementType time_enforcement_type;
 				OrderStatus order_status;
-				std::string order_time_submitted;
+				std::chrono::local_time <std::chrono::system_clock::duration> order_time_submitted;
 };
 
 const std::string order_status_to_str(const OrderStatus& order_status);

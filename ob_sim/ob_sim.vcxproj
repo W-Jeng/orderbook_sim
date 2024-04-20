@@ -132,19 +132,23 @@
     <ClCompile Include="account.cpp" />
     <ClCompile Include="limit_price_queue.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="market_participant.cpp" />
     <ClCompile Include="order.cpp" />
     <ClCompile Include="order_book.cpp" />
     <ClCompile Include="stock_exchange.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="trading_behavior.cpp" />
     <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="account.h" />
     <ClInclude Include="limit_price_queue.h" />
+    <ClInclude Include="market_participant.h" />
     <ClInclude Include="order.h" />
     <ClInclude Include="order_book.h" />
     <ClInclude Include="stock_exchange.h" />
     <ClInclude Include="test.h" />
+    <ClInclude Include="trading_behavior.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
