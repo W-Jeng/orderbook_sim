@@ -6,6 +6,8 @@
 #include <sstream>
 #include "stock_exchange.h"
 #include "account.h"
+#include "market_participant.h"
+
 
 Test::Test() {};
 
@@ -101,3 +103,9 @@ void Test::TestAccount() {
     bool order_valid3 = account.submit_order(ClientOrder("SPY", -100, 10.2, 0, 0, TimeEnforcementType::GOODTILLCANCEL));
     return;
 };
+
+void Test::TestMarketParticipant() {
+    MarketParticipant market_participant;
+    market_participant.perform_action();
+    return;
+}

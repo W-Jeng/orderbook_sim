@@ -11,7 +11,7 @@ class StockExchange {
 public:
     static StockExchange& set_connection();
     bool receive_order(const ClientOrder& client_order);
-
+    const double get_last_traded_price(std::string ticker) const;
 private:
     StockExchange();
     void init_ticker(const std::string& ticker);

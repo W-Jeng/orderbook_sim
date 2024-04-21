@@ -9,5 +9,6 @@ public:
     static void TestConnection();
     static void TestOrder();
     static void TestAccount();
+    static void TestMarketParticipant();
 };
 

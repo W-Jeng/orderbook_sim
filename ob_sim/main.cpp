@@ -9,7 +9,8 @@ int main() {
     // test.LobPromptTest();
     // test.TestConnection();
     // test.TestOrder();
-    test.TestAccount();
+    // test.TestAccount();
+    test.TestMarketParticipant();
     return 0;
 }
 

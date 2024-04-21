@@ -51,3 +51,10 @@ bool StockExchange::receive_order(const ClientOrder& client_order) {
         return false;
     }
 };
+
+const double StockExchange::get_last_traded_price(std::string ticker) const {
+    if (ticker_specific_ob.find(ticker) != ticker_specific_ob.end()) {
+        return ticker_specific_ob.at(ticker).get_last_done_price();
+    } 
+    return 0.0;
+};

@@ -120,3 +120,6 @@ double OrderBook::get_bid_ask_spread() const {
     return -1.0;
 }
 
+double OrderBook::get_last_done_price() const {
+    return last_done_price;
+};

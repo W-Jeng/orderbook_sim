@@ -6,11 +6,11 @@ class Account {
 public:
     Account();
     bool submit_order(const ClientOrder& client_order);
-
+    void add_to_inventory(const ClientOrder& client_order);
+    const int get_quantity(std::string ticker_specified) const;
+    const double get_last_traded_price(std::string ticker_specified) const;
 private:
     StockExchange stock_exchange;
-    double capital;
-    double net_asset_value;
     std::unordered_map<std::string, int> stock_inventory;
 };
 

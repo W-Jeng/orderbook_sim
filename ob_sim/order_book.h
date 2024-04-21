@@ -19,13 +19,13 @@ public:
     void match_order(const BookSide& new_order_side);
     void tabulate_order_book();
     double get_bid_ask_spread() const;
-
+    double get_last_done_price() const;
 private:
     // max heap, get largest bid price at O(1)
     // min heap, get smallest ask price at O(1)
     max_heap bid_book;
     min_heap ask_book;
-    double last_done_price;
+    double last_done_price = 10.0;
     int last_done_quantity;
     std::unordered_map<double, LimitPriceQueue> bid_price_map; // key holds the price, value holds LimitPriceQueue as we can add new orders at "not the top"
     std::unordered_map<double, LimitPriceQueue> ask_price_map;
