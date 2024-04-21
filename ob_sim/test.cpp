@@ -6,8 +6,9 @@
 #include <sstream>
 #include "stock_exchange.h"
 #include "account.h"
-#include "market_participant.h"
-
+#include "market_participants.h"
+#include <thread>
+#include <chrono>
 
 Test::Test() {};
 
@@ -105,7 +106,14 @@ void Test::TestAccount() {
 };
 
 void Test::TestMarketParticipant() {
-    MarketParticipant market_participant;
-    market_participant.perform_action();
+    auto start = std::chrono::high_resolution_clock::now();
+    MarketParticipants market_participant;
+    for (int i = 0; i < 100; ++i) {
+        market_participant.perform_action();
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double, std::milli> elapsed_milliseconds = end - start;
+    std::cout << "Elapsed time: " << elapsed_milliseconds.count() << " milliseconds" << std::endl;
     return;
 }

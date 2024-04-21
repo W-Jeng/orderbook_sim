@@ -7,7 +7,7 @@ bool Account::submit_order(const ClientOrder& client_order) {
     if (order_received) {
         Account::add_to_inventory(client_order);
     }
-    return stock_exchange.receive_order(client_order);
+    return order_received;
 };
 
 void Account::add_to_inventory(const ClientOrder& client_order) {

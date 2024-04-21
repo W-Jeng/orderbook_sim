@@ -46,6 +46,7 @@ void OrderBook::match_order(const BookSide& new_order_side) {
             ask_order_queue->fill_order(matching_quantity);
             last_done_price = matching_price;
             last_done_quantity = matching_quantity;
+            std::cout << "Order matched at: " << matching_price << ", quantity matched: " << last_done_quantity << "\n";
         }
 
         if (bid_order_queue->is_empty()) {
@@ -109,7 +110,7 @@ void OrderBook::tabulate_order_book() {
         }
         std::cout << "\n";
     }
-    std::cout << "-------------------------------------------------------------------------------------\n";
+    std::cout << "-------------------------------------------------------------------------------------\n\n";
     return;
 }
 

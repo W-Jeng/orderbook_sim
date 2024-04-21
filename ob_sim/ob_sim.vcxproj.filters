@@ -39,7 +39,7 @@
     <ClCompile Include="account.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="market_participant.cpp">
+    <ClCompile Include="market_participants.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="trading_behavior.cpp">
@@ -68,7 +68,7 @@
     <ClInclude Include="account.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="market_participant.h">
+    <ClInclude Include="market_participants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="trading_behavior.h">

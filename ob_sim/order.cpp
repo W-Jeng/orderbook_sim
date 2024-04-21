@@ -31,8 +31,6 @@ ClientOrder::ClientOrder(std::string temp_ticker, long int temp_quantity, double
     const auto now = std::chrono::system_clock::now();
     const auto time_zone = std::chrono::current_zone();
     order_time_submitted = time_zone->to_local(now);
-    std::cout << order_time_submitted << std::endl;
-    
 };
 
 const std::string ClientOrder::get_ticker() const {

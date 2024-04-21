@@ -132,7 +132,7 @@
     <ClCompile Include="account.cpp" />
     <ClCompile Include="limit_price_queue.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="market_participant.cpp" />
+    <ClCompile Include="market_participants.cpp" />
     <ClCompile Include="order.cpp" />
     <ClCompile Include="order_book.cpp" />
     <ClCompile Include="stock_exchange.cpp" />
@@ -143,7 +143,7 @@
   <ItemGroup>
     <ClInclude Include="account.h" />
     <ClInclude Include="limit_price_queue.h" />
-    <ClInclude Include="market_participant.h" />
+    <ClInclude Include="market_participants.h" />
     <ClInclude Include="order.h" />
     <ClInclude Include="order_book.h" />
     <ClInclude Include="stock_exchange.h" />
