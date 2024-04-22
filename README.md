@@ -7,7 +7,7 @@ Key features:
 3) Adding new price-point in the limit order book takes O(log N).
 4) FIFO queue for new orders at particular limit order (price-time priority done right).
 5) Tabulating the limit order book that shows aggregating order at the limit price.
-6) Market participants basic simulation, places arbitrary orders based on order book imbalance.
+6) Market participants basic simulation, places arbitrary orders based on the order book imbalance.
 
 An order book is a crucial component in financial markets, serving as a real-time ledger that displays a list of buy and sell orders for a specific financial instrument. It organizes and presents these orders based on price and quantity, providing traders with essential information to make informed decisions.
 

@@ -106,8 +106,8 @@ void Test::TestAccount() {
 };
 
 void Test::TestMarketParticipant() {
-    auto start = std::chrono::high_resolution_clock::now();
     MarketParticipants market_participant;
+    auto start = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < 100; ++i) {
         market_participant.perform_action();
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));

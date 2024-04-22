@@ -35,7 +35,7 @@ double TradingBehavior::get_buysell_price(const double& last_traded_price) {
     static std::random_device rd;
     static std::mt19937 gen(rd());
     static double tick_spacing = 0.0008;
-    static std::normal_distribution<> dis(last_traded_price, std::sqrt(tick_spacing));
+    std::normal_distribution<> dis(last_traded_price, std::sqrt(tick_spacing));
     double price_generated = dis(gen);
     price_generated = std::round(price_generated * 100) / 100.0;
     return std::max(price_generated, 0.01);
