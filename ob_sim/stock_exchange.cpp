@@ -3,8 +3,6 @@
 
 StockExchange::StockExchange() {
     StockExchange::init_ticker("SPY");
-    StockExchange::init_ticker("QQQ");
-    StockExchange::init_ticker("VT");
 };
 
 //ensures singleton design
