@@ -1,4 +1,4 @@
-# Order book simulation
+# Efficient Order book implementation and simple market participants simulation
 Highly efficient order book implementation done in OOP fashion and uses min-max heap tree structure.
 
 <img src="order_book_console.png" alt="Order Book" width="700"/>
