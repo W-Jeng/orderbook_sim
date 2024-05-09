@@ -110,7 +110,7 @@ void Test::TestMarketParticipant() {
     auto start = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < 100; ++i) {
         market_participant.perform_action();
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        // std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> elapsed_milliseconds = end - start;

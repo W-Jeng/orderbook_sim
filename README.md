@@ -1,6 +1,8 @@
 # Order book simulation
 Highly efficient order book implementation done in OOP fashion and uses min-max heap tree structure.
 
+<img src="order_book_console.png" alt="Order Book" width="700"/>
+
 Key features:
 1) Get top-level order for bid ask price in O(1) time complexity.
 2) Cancel order in O(1) time complexity using hash map!
