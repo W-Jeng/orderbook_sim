@@ -114,6 +114,6 @@ void Test::TestMarketParticipant() {
     }
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> elapsed_milliseconds = end - start;
-    std::cout << "Elapsed time: " << elapsed_milliseconds.count() << " milliseconds" << std::endl;
+    // std::cout << "Elapsed time: " << elapsed_milliseconds.count() << " milliseconds" << std::endl;
     return;
 }
