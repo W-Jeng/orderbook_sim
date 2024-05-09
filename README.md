@@ -3,7 +3,7 @@ Highly efficient order book implementation done in OOP fashion and uses min-max 
 
 <img src="order_book_console.png" alt="Order Book" width="700"/>
 
-Key features:
+## Key features:
 1) Get top-level order for bid ask price in O(1) time complexity.
 2) Cancel order in O(1) time complexity using hash map!
 3) Adding new price-point in the limit order book takes O(log N).
@@ -13,7 +13,7 @@ Key features:
 
 An order book is a crucial component in financial markets, serving as a real-time ledger that displays a list of buy and sell orders for a specific financial instrument. It organizes and presents these orders based on price and quantity, providing traders with essential information to make informed decisions.
 
-Why is it Important?
+## Why is it Important?
 1) Price Discovery: The order book helps in determining the fair market price by aggregating buy and sell orders. It reflects the supply and demand dynamics, allowing traders to gauge the market sentiment and make price predictions.
 2) Transparency: It offers transparency by displaying all active orders, enabling traders to see the depth of the market and understand the liquidity available at different price levels. This transparency fosters trust and confidence in the market.
 3) Order Execution: Traders use the order book to place, modify, or cancel orders. It facilitates efficient order matching by automatically pairing buy and sell orders based on predefined criteria, ensuring timely and fair execution.
